@@ -1,5 +1,4 @@
-
-
-
-
-    // grid-row: slot0000 / span 10;
+module.exports = {
+    Activity: require("./Activity"),
+    User: require("./User")
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Time-tracking",
+  "version": "1.0.0",
+  "description": "Time management training app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inorrmann/Time-tracking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inorrmann/Time-tracking/issues"
+  },
+  "homepage": "https://github.com/inorrmann/Time-tracking#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.3",
+    "morgan": "^1.9.1"
+  }
+}
