@@ -8,11 +8,24 @@ const UserSchema = new Schema({
         required: true
     },
     lastName: {
-        type: String
+        type: String,
+        required: true
     },
     username: {
         type: String,
-        unique: true
+        unique: true,
+        required: true
+    },
+    email: {
+        type: String,
+        unique: true,
+        required: true,
+        match: [/.+@.+\..+/, "Pkease enter a valid email address"]
+    },
+    password: {
+        type: String,
+        trim: true,
+        validate: [({length}) => length >=6, "Password should be at least 6 characters long"]
     },
     activities: [
         {

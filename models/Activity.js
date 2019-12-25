@@ -20,9 +20,10 @@ const ActivitySchema = new Schema({
         required: "End time is required"
     },
     totalTime: {
-        type: Number
+        type: Number,
+        default: 0
     }
 });
 
 const Activity = mongoose.model("Activity", ActivitySchema);
-module.exports = Book;
+module.exports = Activity;

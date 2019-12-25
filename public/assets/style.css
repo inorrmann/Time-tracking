@@ -55,10 +55,6 @@ body::after {
     padding-left: 5px;
 }
 
-#submitRegister {
-    float: right;
-}
-
 /* ************************** LOGIN PAGE ************************** */
 
 .loginpage {
