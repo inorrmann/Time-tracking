@@ -17,12 +17,14 @@ document.querySelector("#today-6").textContent = moment().subtract(6, 'days').fo
 const saveBtn = document.querySelector("#saveBtn")
 saveBtn.addEventListener("click", function () {
     event.preventDefault();
+    document.querySelector("#calendar").classList.remove("d-none");
     // collect all the values from the dropdown menus
     let date = document.querySelector("#dateSelection").value;
     let activity = document.querySelector("#activity").value;
     let description = document.querySelector("#inputDescription").value;
 
     // transform the selections for the start and end times
+    // start times
     let startHr = document.querySelector("#startHour").value;
     let startMin = document.querySelector("#startMinute").value;
     let startTime = document.querySelector("#startTime").value;
@@ -30,11 +32,36 @@ saveBtn.addEventListener("click", function () {
     if (startHr === "1200") {
         startHr = "0";
     }
-    let st = parseInt(startHr) + parseInt(startMin) + parseInt(startTime)
-    let start = st.toString();
+    let startHour = parseInt(startHr) + parseInt(startTime);
+    let startMinute = parseInt(startMin);
+
+    let startSlot = (parseInt(startHr) + parseInt(startMin) + parseInt(startTime)).toString();
+
+    // end times
+    let endHr = document.querySelector("#endHour").value;
+    let endMin = document.querySelector("#endMinute").value;
+    let endTime = document.querySelector("#endTime").value;
+
+    if (endHr === "1200") {
+        endHr = "0";
+    }
+    let endHour = parseInt(endHr) + parseInt(endTime);
+    let endMinute = parseInt(endMin);
+    
+    let endSlot = (parseInt(endHr) + parseInt(endMin) + parseInt(endTime)).toString();
+
+    // total time calculations
+    const totalHour = (endHour - startHour) / 100;
+    const totalMinute = (endMinute - startMinute) / 20;
+    const slot = ((totalHour * 3) + totalMinute).toString();
+
+    console.log(startSlot);
+    console.log(endSlot);
+    console.log(slot)
+
+    
 
 
-
-    console.log(start);
+    document.querySelector("#calendarDate").textContent = `Date: ${date}`;
 
 })

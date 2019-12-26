@@ -83,11 +83,11 @@ label {
     float: right;
 }
 
-#saveCharts, #addMore {
+#goToChartsBtn, #saveBtn {
     background-color: rgb(140, 154, 189);
 }
 
-#saveCharts:hover, #addMore:hover {
+#goToChartsBtn:hover, #saveBtn:hover {
     background-color: rgb(100, 111, 138);
     color: #F1F1E6;
 }
@@ -101,8 +101,10 @@ label {
     grid-area: rightcolumn;
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(72, 1fr);
+    grid-template-rows: repeat(80, 1fr);
     grid-template-areas: 
+        "date date" "date date" "date date" "date date"
+        "date date" "date date" "date date" "date date"
         "time0000 slot0" "time0000 slot20" "time0000 slot40"
         "time0100 slot100" "time0100 slot120" "time0100 slot140" 
         "time0200 slot200" "time0200 slot220" "time0200 slot240" 
@@ -129,30 +131,12 @@ label {
         "time2300 slot2300" "time2300 slot2320" "time2300 slot2340";
 }
 
-/* "time0 slot0" "time0 slot20" "time0 slot40"
-        "time100 slot100" "time100 slot120" "time100 slot140" 
-        "time200 slot200" "time200 slot220" "time200 slot240" 
-        "time300 slot300" "time300 slot320" "time300 slot340"
-        "time400 slot400" "time400 slot420" "time400 slot440"
-        "time500 slot500" "time500 slot520" "time500 slot540" 
-        "time600 slot600" "time600 slot620" "time600 slot640"
-        "time700 slot700" "time700 slot720" "time700 slot740"
-        "time800 slot800" "time800 slot820" "time800 slot840"
-        "time900 slot900" "time900 slot920" "time900 slot940"
-        "time1000 slot1000" "time1000 slot1020" "time1000 slot1040"
-        "time1100 slot1100" "time1100 slot1120" "time1100 slot1140"
-        "time1200 slot1200" "time1200 slot1220" "time1200 slot1240"
-        "time1300 slot1300" "time1300 slot1320" "time1300 slot1340"
-        "time1400 slot1400" "time1400 slot1420" "time1400 slot1440"
-        "time1500 slot1500" "time1500 slot1520" "time1500 slot1540"
-        "time1600 slot1600" "time1600 slot1620" "time1600 slot1640"
-        "time1700 slot1700" "time1700 slot1720" "time1700 slot1740"
-        "time1800 slot1800" "time1800 slot1820" "time1800 slot1840"
-        "time1900 slot1900" "time1900 slot1920" "time1900 slot1940"
-        "time2000 slot2000" "time2000 slot2020" "time2000 slot2040"
-        "time2100 slot2100" "time2100 slot2120" "time2100 slot2140"
-        "time2200 slot2200" "time2200 slot2220" "time2200 slot2240"
-        "time2300 slot2300" "time2300 slot2320" "time2300 slot2340"; */
+#calendarDate {
+    grid-area: date;
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
 .time {
     font-family: 'Archivo', sans-serif;
@@ -162,101 +146,6 @@ label {
     padding-bottom: 10%;
 }
 
-/* .t0000 {
-    grid-area: time0000;
-} */
-
-.t0100 {
-    grid-area: time0100;
-}
-
-.t0200 {
-    grid-area: time0200;
-}
-
-.t0300 {
-    grid-area: time0300;
-}
-
-.t0400 {
-    grid-area: time0400;
-}
-
-.t0500 {
-    grid-area: time0500;
-}
-
-.t0600 {
-    grid-area: time0600;
-}
-
-.t0700 {
-    grid-area: time0700;
-}
-
-.t0800 {
-    grid-area: time0800;
-}
-
-.t0900 {
-    grid-area: time0900;
-}
-
-.t1000 {
-    grid-area: time1000;
-}
-
-.t1100 {
-    grid-area: time1100;
-}
-
-.t1200 {
-    grid-area: time1200;
-}
-
-.t1300 {
-    grid-area: time1300;
-}
-
-.t1400 {
-    grid-area: time1400;
-}
-
-.t1500 {
-    grid-area: time1500;
-}
-
-.t1600 {
-    grid-area: time1600;
-}
-
-.t1700 {
-    grid-area: time1700;
-}
-
-.t1800 {
-    grid-area: time1800;
-}
-
-.t1900 {
-    grid-area: time1900;
-}
-
-.t2000 {
-    grid-area: time2000;
-}
-
-.t2100 {
-    grid-area: time2100;
-}
-
-.t2200 {
-    grid-area: time2200;
-}
-
-.t2300 {
-    grid-area: time2300;
-}
 
 /* tyoe of activity colors */
 .sleep {

@@ -12,17 +12,21 @@ const ActivitySchema = new Schema({
         trim: true
     },
     startTime: {
-        type: Date,
+        type: String,
         required: "Start time is required"
     },
     endTime: {
-        type: Date,
+        type: String,
         required: "End time is required"
     },
     totalTime: {
-        type: Number,
+        type: String,
         default: 0
+    },
+    date: {
+        type: Date
     }
+
 });
 
 const Activity = mongoose.model("Activity", ActivitySchema);
