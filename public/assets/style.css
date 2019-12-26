@@ -30,10 +30,17 @@ body::after {
         "sidebarBottom footer footer footer rightbarBottom";
 }
 
-#title {
+.title {
     grid-area: navbar;
     margin: auto;
     font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.subtitle {
+    grid-area: navbar;
+    margin-top: 120px;
     font-weight: bold;
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -47,13 +54,11 @@ body::after {
     margin: auto;
 }
 
-.register {
+.start {
     grid-area: rightcolumn;
+    margin: auto;
 }
 
-.registerForm {
-    padding-left: 5px;
-}
 
 /* ************************** LOGIN PAGE ************************** */
 
@@ -98,16 +103,16 @@ label {
     grid-template-columns: 20% 80%;
     grid-template-rows: repeat(72, 1fr);
     grid-template-areas: 
-        "time0000 slot0000" "time0000 slot0020" "time0000 slot0040"
-        "time0100 slot0100" "time0100 slot0120" "time0100 slot0140" 
-        "time0200 slot0200" "time0200 slot0220" "time0200 slot0240" 
-        "time0300 slot0300" "time0300 slot0320" "time0300 slot0340"
-        "time0400 slot0400" "time0400 slot0420" "time0400 slot0440"
-        "time0500 slot0500" "time0500 slot0520" "time0500 slot0540" 
-        "time0600 slot0600" "time0600 slot0620" "time0600 slot0640"
-        "time0700 slot0700" "time0700 slot0720" "time0700 slot0740"
-        "time0800 slot0800" "time0800 slot0820" "time0800 slot0840"
-        "time0900 slot0900" "time0900 slot0920" "time0900 slot0940"
+        "time0000 slot0" "time0000 slot20" "time0000 slot40"
+        "time0100 slot100" "time0100 slot120" "time0100 slot140" 
+        "time0200 slot200" "time0200 slot220" "time0200 slot240" 
+        "time0300 slot300" "time0300 slot320" "time0300 slot340"
+        "time0400 slot400" "time0400 slot420" "time0400 slot440"
+        "time0500 slot500" "time0500 slot520" "time0500 slot540" 
+        "time0600 slot600" "time0600 slot620" "time0600 slot640"
+        "time0700 slot700" "time0700 slot720" "time0700 slot740"
+        "time0800 slot800" "time0800 slot820" "time0800 slot840"
+        "time0900 slot900" "time0900 slot920" "time0900 slot940"
         "time1000 slot1000" "time1000 slot1020" "time1000 slot1040"
         "time1100 slot1100" "time1100 slot1120" "time1100 slot1140"
         "time1200 slot1200" "time1200 slot1220" "time1200 slot1240"
@@ -124,6 +129,31 @@ label {
         "time2300 slot2300" "time2300 slot2320" "time2300 slot2340";
 }
 
+/* "time0 slot0" "time0 slot20" "time0 slot40"
+        "time100 slot100" "time100 slot120" "time100 slot140" 
+        "time200 slot200" "time200 slot220" "time200 slot240" 
+        "time300 slot300" "time300 slot320" "time300 slot340"
+        "time400 slot400" "time400 slot420" "time400 slot440"
+        "time500 slot500" "time500 slot520" "time500 slot540" 
+        "time600 slot600" "time600 slot620" "time600 slot640"
+        "time700 slot700" "time700 slot720" "time700 slot740"
+        "time800 slot800" "time800 slot820" "time800 slot840"
+        "time900 slot900" "time900 slot920" "time900 slot940"
+        "time1000 slot1000" "time1000 slot1020" "time1000 slot1040"
+        "time1100 slot1100" "time1100 slot1120" "time1100 slot1140"
+        "time1200 slot1200" "time1200 slot1220" "time1200 slot1240"
+        "time1300 slot1300" "time1300 slot1320" "time1300 slot1340"
+        "time1400 slot1400" "time1400 slot1420" "time1400 slot1440"
+        "time1500 slot1500" "time1500 slot1520" "time1500 slot1540"
+        "time1600 slot1600" "time1600 slot1620" "time1600 slot1640"
+        "time1700 slot1700" "time1700 slot1720" "time1700 slot1740"
+        "time1800 slot1800" "time1800 slot1820" "time1800 slot1840"
+        "time1900 slot1900" "time1900 slot1920" "time1900 slot1940"
+        "time2000 slot2000" "time2000 slot2020" "time2000 slot2040"
+        "time2100 slot2100" "time2100 slot2120" "time2100 slot2140"
+        "time2200 slot2200" "time2200 slot2220" "time2200 slot2240"
+        "time2300 slot2300" "time2300 slot2320" "time2300 slot2340"; */
+
 .time {
     font-family: 'Archivo', sans-serif;
     text-align: right;
@@ -132,9 +162,9 @@ label {
     padding-bottom: 10%;
 }
 
-.t0000 {
+/* .t0000 {
     grid-area: time0000;
-}
+} */
 
 .t0100 {
     grid-area: time0100;

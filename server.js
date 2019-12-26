@@ -2,6 +2,8 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
+const db = require("./models");
+
 const hbs = require("express-handlebars");
 const path = require("path");
 
@@ -13,7 +15,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.engine("hbs", hbs({ defaultLayout: "main.hbs"}));
+app.engine("hbs", hbs({ defaultLayout: "main.hbs" }));
 app.set("view engine", "hbs");
 
 app.use(express.static(path.join(__dirname, "/public")));
@@ -24,9 +26,18 @@ app.use("/api/", apiRoutes);
 app.use("/", htmlRoutes);
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/timetracker", 
-    { useNewUrlParser: true}
-    );
+    process.env.MONGODB_URI || "mongodb://localhost/timemanagement",
+    { useNewUrlParser: true }
+);
+
+// populate the user table with a single user
+db.User.create({ name: "Joe Bruin" })
+    .then(dbUser => {
+        console.log(dbUser);
+    })
+    .catch(({message}) => {
+        console.log(message);
+    })
 
 
 app.listen(PORT, () => {
