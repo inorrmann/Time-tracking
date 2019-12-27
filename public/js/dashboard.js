@@ -38,7 +38,7 @@ saveBtn.addEventListener("click", function () {
     }
     else if (startHr === "1200") {
         startHr = "0";
-        startDisplay = startHr.slice(0, 2);
+        startDisplay = "12";
     }
 
     // change am/pm to display format
@@ -73,7 +73,7 @@ saveBtn.addEventListener("click", function () {
     }
     else if (endHr === "1200") {
         endHr = "0";
-        endDisplay = endHr.slice(0, 2);
+        endDisplay = "12";
     }
 
     // change am/pm to display format
@@ -123,7 +123,6 @@ saveBtn.addEventListener("click", function () {
             data: newActivity
         })
             .then(function () {
-                console.log(newActivity.date);
                 location.href = `/dashboard/${newActivity.date}`;
             })
     }
@@ -134,6 +133,8 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 })
 
-// $(".popover-dismiss").popover({
-//     trigger: "focus"
-//   })
+const goToChartsBtn = document.querySelector("#goToChartsBtn");
+goToChartsBtn.addEventListener("click", function() {
+    event.preventDefault();
+    location.href = "/charts";    
+})
