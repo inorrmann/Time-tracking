@@ -22,7 +22,7 @@ body::after {
 .grid {
     display: grid;
     grid-template-columns: 9% 40% 2% 40% 9%;
-    grid-template-rows: 150px 1fr 100px;
+    grid-template-rows: 140px 1fr 110px;
     height: 100vh;
     grid-template-areas: 
         "navbar navbar navbar navbar navbar"
@@ -101,10 +101,11 @@ label {
     grid-area: rightcolumn;
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(80, 1fr);
+    /* grid-template-rows: repeat(80, 1fr); */
+    grid-template-rows: repeat(80, 12px);
     grid-template-areas: 
-        "date date" "date date" "date date" "date date"
-        "date date" "date date" "date date" "date date"
+        "date date" "date date" "date date" 
+        "date date" "date date" "date date" 
         "time0000 slot0" "time0000 slot20" "time0000 slot40"
         "time0100 slot100" "time0100 slot120" "time0100 slot140" 
         "time0200 slot200" "time0200 slot220" "time0200 slot240" 
@@ -146,6 +147,9 @@ label {
     padding-bottom: 10%;
 }
 
+.popover {
+    color: black;
+}
 
 /* tyoe of activity colors */
 .sleep {
@@ -172,6 +176,15 @@ label {
     background-color: #EB9007;
 }
 
+/* footer */
+.colors {
+    grid-area: footer;
+    margin: auto;
+}
+
+.color-footer {
+    font-size: 0.85rem;
+}
 
 /* ************************** CHARTS PAGE ************************** */
 .charts {

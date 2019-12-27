@@ -26,7 +26,7 @@ app.use("/api/", apiRoutes);
 app.use("/", htmlRoutes);
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/timemanagement",
+    process.env.MONGODB_URI || "mongodb://localhost/timetracker",
     { useNewUrlParser: true }
 );
 

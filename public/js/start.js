@@ -6,11 +6,3 @@ startBtn.addEventListener("click", function () {
     location.href = "/dashboard"
 
 })
-
-
-
-
-
-// grid-row: slot0000 / span 10;
-
-

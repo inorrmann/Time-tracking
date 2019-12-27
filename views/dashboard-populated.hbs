@@ -116,9 +116,11 @@
         </form>
     </div>
     {{!-- <!-- calendar on the right --> --}}
-    {{!-- <div class="d-none overflow-auto mt-4" id="calendar"> --}}
+    <div class="overflow-auto mt-4" id="calendar">
         {{!-- <!-- times --> --}}
-        {{!-- <p class="grid-item" id="calendarDate"></p>
+        {{#with fullDate}}
+        <p class="grid-item" id="calendarDate">{{date}}</p>
+        {{/with}}
         <div class="grid-item time" style="grid-area: time0000">12 am</div>
         <div class="grid-item time" style="grid-area: time0100">1 am</div>
         <div class="grid-item time" style="grid-area: time0200">2 am</div>
@@ -142,13 +144,30 @@
         <div class="grid-item time" style="grid-area: time2000">8 pm</div>
         <div class="grid-item time" style="grid-area: time2100">9 pm</div>
         <div class="grid-item time" style="grid-area: time2200">10 pm</div>
-        <div class="grid-item time" style="grid-area: time2300">11 pm</div> --}}
-        {{!-- {{#each}} --}}
-        {{!-- <div class="{{activity}}" style="grid-row: slot{{startTime}} / span {{totalTime}}"></div> --}}
-        {{!-- <div class="sleep" style="grid-row: slot120 / span 4"></div> --}}
-        {{!-- {{/each}} --}}
-    {{!-- </div> --}}
+        <div class="grid-item time" style="grid-area: time2300">11 pm</div>
+        {{#each activities}}
+        <div class="{{activity}}" style="grid-row: slot{{startTime}} / span {{totalTime}}" data-toggle="popover"
+            title="{{activity}} - {{description}}" data-html="true" data-content="Time: {{startDisplay}} - {{endDisplay}}" data-trigger="hover"></div>
+        {{/each}}
+    </div>
 
+    <div class="colors text-center">
+        <h6 class="mb-3">Make sure your activities do not overlap with previously saved activities.</h6>
+        <div class="mt-3">
+            <h6 class="color-footer d-inline eat py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">Eat</h6>
+            <h6 class="color-footer d-inline leisure py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">Leisure</h6>
+            <h6 class="color-footer d-inline school py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">School</h6>
+            <h6 class="color-footer d-inline sleep py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">Sleep</h6>
+            <h6 class="color-footer d-inline work py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">Work</h6>
+            <h6 class="color-footer d-inline other py-1 px-3 border border-right-0 border-light rounded-left"></h6>
+            <h6 class="color-footer d-inline py-1 px-2 mr-2 border rounded-right border-light">Other</h6>
+        </div>
+    </div>
 </div>
 
 {{!-- Warning Modal  --}}

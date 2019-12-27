@@ -19,12 +19,18 @@ const ActivitySchema = new Schema({
         type: String,
         required: "End time is required"
     },
+    startDisplay: {
+        type: String
+    },
+    endDisplay: {
+        type: String
+    },
     totalTime: {
         type: String,
         default: 0
     },
     date: {
-        type: Date
+        type: String
     }
 
 });
