@@ -128,7 +128,6 @@ $(document).ready(function () {
                 maintainAspectRatio: false,
                 scales: {
                     xAxes: [{
-                        // stacked: true,
                         scaleLabel: {
                             display: true,
                             labelString: "Date",
@@ -136,7 +135,6 @@ $(document).ready(function () {
                         }
                     }],
                     yAxes: [{
-                        // stacked: true,
                         scaleLabel: {
                             display: true,
                             labelString: "Hours",
@@ -160,68 +158,88 @@ $(document).ready(function () {
         document.querySelector("#today-5").textContent = moment().subtract(5, 'days').format("dddd, MMM Do, YYYY");
         document.querySelector("#today-6").textContent = moment().subtract(6, 'days').format("dddd, MMM Do, YYYY");
 
+        const goBtn = document.querySelector("#goBtn");
+        goBtn.addEventListener("click", function () {
+            event.preventDefault();
 
+            let dateChart = document.querySelector("#date-chart").value;
 
-        let dayChart = document.querySelector("#activity-charts").getContext("2d");
-
-        let dayDisplay = new Chart(dayChart, {
-            type: "pie",
-            data: {
-                labels: ["Eat", "Leisure", "School", "Sleep", "Work", "Other", "None"],
-                datasets: [{
-                    label: "Eat",
-                    data: dayActivities,
-                    backgroundColor: ["#FAE123"],
-                    hoverBorderWidth: 1,
-                    hoverBorderColor: "black"
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: "This Week's Activities",
-                    fontFamily: "Raleway",
-                    fontSize: 20
-                },
-                legend: {
-                    display: true,
-                    position: "right",
-                    labels: {
-                        fontColor: "black",
-                        fontSize: 16
-                    }
-                },
-                layout: {
-                    padding: {
-                        left: 5,
-                        right: 5
-                    }
-                },
-                tooltips: {
-                    enabled: true,
-                },
-                maintainAspectRatio: false,
-                scales: {
-                    xAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Date",
-                            fontSize: 16
+            let dayActivity = [0, 0, 0, 0, 0, 0, 24]
+            data.forEach((activity) => {
+                    if (activity.date === dateChart) {
+                        if (activity.activity === "eat") {
+                            dayActivity[0] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
                         }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: "Hours",
-                            fontSize: 16
+                        else if (activity.activity === "leisure") {
+                            dayActivity[1] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
                         }
+                        else if (activity.activity === "school") {
+                            dayActivity[2] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        }
+                        else if (activity.activity === "sleep") {
+                            dayActivity[3] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        }
+                        else if (activity.activity === "work") {
+                            dayActivity[4] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        }
+                        else if (activity.activity === "other") {
+                            dayActivity[5] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        }
+                    }
+                });
+
+
+            let dayChart = document.querySelector("#activity-charts").getContext("2d");
+
+            let dayDisplay = new Chart(dayChart, {
+                type: "pie",
+                data: {
+                    labels: ["Eat", "Leisure", "School", "Sleep", "Work", "Other", "None"],
+                    datasets: [{
+                        data: dayActivity,
+                        backgroundColor: ["#FAE123", "#35B35A", "#5a32b8", "#2C58B8", "#B31A19", "#EB9007", "white"],
+                        borderWidth: 1,
+                        borderColor: ["#FAE123", "#35B35A", "#5a32b8", "#2C58B8", "#B31A19", "#EB9007", "white"],
+                        hoverBorderWidth: 1,
+                        hoverBorderColor: "black"
                     }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: `Activities for ${dateChart}`,
+                        position: "bottom",
+                        fontFamily: "Raleway",
+                        fontSize: 20
+                    },
+                    legend: {
+                        display: true,
+                        position: "right",
+                        labels: {
+                            fontColor: "black",
+                            fontSize: 16
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            left: 5,
+                            right: 5
+                        }
+                    },
+                    tooltips: {
+                        enabled: true,
+                    },
+                    maintainAspectRatio: true,
                 }
-            }
-        });
+            });
 
+        });
 
         // charts:
         // pie chart 

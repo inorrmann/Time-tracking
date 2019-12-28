@@ -4,11 +4,13 @@
 
     {{!-- <!-- charts --> --}}
     <div class="charts">
+        {{!-- left chart --}}
         <div class="week-chart m-2 ml-3 p-2 rounded overflow-auto">
             <canvas id="week-charts"></canvas>
         </div>
+        {{!-- right chart --}}
         <div class="activity-chart m-2 mr-3 p-2 rounded">
-            <form class="text-center">
+            <form class="text-center mb-5">
                 <h5 class="my-3 mx-5">Select a date to see the distribution of the activities saved</h5>
                 <div class="form-group row mx-2 justify-content-center">
                     <select id="date-chart" class="form-control col-md-10 mr-1">
@@ -23,7 +25,7 @@
                     <button type="submit" class="btn" id="goBtn">GO</button>
                 </div>
             </form>
-            <canvas id="activity-charts"></canvas>
+            <canvas id="activity-charts" class="mt-4"></canvas>
         </div>
     </div>
 </div>
