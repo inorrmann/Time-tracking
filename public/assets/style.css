@@ -177,6 +177,10 @@ label {
     font-size: 0.85rem;
 }
 
+#footer-btn {
+    grid-area: rightbarBottom;
+}
+
 /* ************************** CHARTS PAGE ************************** */
 .charts {
     grid-column: sidebar / span 5;
@@ -205,9 +209,6 @@ label {
 
 #footer-btns {
     grid-area: bottomRight;
-    display: block;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 .redirectBtn {

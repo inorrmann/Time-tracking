@@ -132,3 +132,8 @@ goToChartsBtn.addEventListener("click", function() {
     event.preventDefault();
     location.href = "/charts";    
 })
+
+const homeBtn = document.querySelector("#home-btn");
+    homeBtn.addEventListener("click", function () {
+        location.href = "/"
+    })
