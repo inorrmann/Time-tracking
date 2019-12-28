@@ -202,3 +202,16 @@ label {
 #goBtn {
     background-color: #BDD0FB;
 }
+
+#footer-btns {
+    grid-area: bottomRight;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.redirectBtn {
+    font-size: 2.5rem;
+    color: #BDD0FB;
+
+}

@@ -166,33 +166,33 @@ $(document).ready(function () {
 
             let dayActivity = [0, 0, 0, 0, 0, 0, 24]
             data.forEach((activity) => {
-                    if (activity.date === dateChart) {
-                        if (activity.activity === "eat") {
-                            dayActivity[0] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
-                        else if (activity.activity === "leisure") {
-                            dayActivity[1] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
-                        else if (activity.activity === "school") {
-                            dayActivity[2] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
-                        else if (activity.activity === "sleep") {
-                            dayActivity[3] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
-                        else if (activity.activity === "work") {
-                            dayActivity[4] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
-                        else if (activity.activity === "other") {
-                            dayActivity[5] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                            dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
-                        }
+                if (activity.date === dateChart) {
+                    if (activity.activity === "eat") {
+                        dayActivity[0] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
                     }
-                });
+                    else if (activity.activity === "leisure") {
+                        dayActivity[1] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                    }
+                    else if (activity.activity === "school") {
+                        dayActivity[2] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                    }
+                    else if (activity.activity === "sleep") {
+                        dayActivity[3] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                    }
+                    else if (activity.activity === "work") {
+                        dayActivity[4] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                    }
+                    else if (activity.activity === "other") {
+                        dayActivity[5] += ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                        dayActivity[6] -= ((Math.round((parseInt(activity.totalTime) / 3) * 100)) / 100);
+                    }
+                }
+            });
 
 
             let dayChart = document.querySelector("#activity-charts").getContext("2d");
@@ -238,15 +238,18 @@ $(document).ready(function () {
                     maintainAspectRatio: true,
                 }
             });
-
         });
+    })
 
-        // charts:
-        // pie chart 
-        //     for a given day  ???
-        //     (adding the number of slots and also including the times that have not been recorded)
-        // 
+    // redirect buttons at the bottom of the page
+    const homeBtn = document.querySelector("#home-btn");
+    homeBtn.addEventListener("click", function () {
+        location.href = "/"
+    })
 
+    const dashboardBtn = document.querySelector("#dashboard-btn");
+    dashboardBtn.addEventListener("click", function () {
+        location.href = "/dashboard"
     })
 
 })
