@@ -142,7 +142,7 @@ label {
     color: black;
 }
 
-/* tyoe of activity colors */
+/* type of activity colors */
 .sleep {
     background-color: #2C58B8;
 }
@@ -183,7 +183,7 @@ label {
     grid-row: sidebar / span 2;
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 85% 15%;
     grid-template-areas: 
         "topLeft topRight"
         "bottomLeft bottomRight" 
@@ -196,11 +196,6 @@ label {
 
 .activity-chart {
     grid-area: topRight;
-    background-color: rgb(189, 208, 251, .4);
-}
-
-.history-chart {
-    grid-column: bottomLeft / span 2;
     background-color: rgb(189, 208, 251, .4);
 }
 
