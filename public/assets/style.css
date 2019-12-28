@@ -60,14 +60,6 @@ body::after {
 }
 
 
-/* ************************** LOGIN PAGE ************************** */
-
-.loginpage {
-    grid-column: leftcolumn / span 3;
-    margin-top: 100px;
-}
-
-
 /* ************************** DASHBOARD PAGE ************************** */
 /* activities' form on the left */
 .activities {
@@ -84,7 +76,7 @@ label {
 }
 
 #goToChartsBtn, #saveBtn {
-    background-color: rgb(140, 154, 189);
+    background-color: #BDD0FB;
 }
 
 #goToChartsBtn:hover, #saveBtn:hover {
@@ -101,7 +93,6 @@ label {
     grid-area: rightcolumn;
     display: grid;
     grid-template-columns: 20% 80%;
-    /* grid-template-rows: repeat(80, 1fr); */
     grid-template-rows: repeat(80, 12px);
     grid-template-areas: 
         "date date" "date date" "date date" 
@@ -188,6 +179,31 @@ label {
 
 /* ************************** CHARTS PAGE ************************** */
 .charts {
-    grid-column: leftcolumn / span 3;
-    background-color: grey
+    grid-column: sidebar / span 5;
+    grid-row: sidebar / span 2;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: 
+        "topLeft topRight"
+        "bottomLeft bottomRight" 
+}
+
+.week-chart {
+    grid-area: topLeft;
+    background-color: rgb(189, 208, 251, .4);
+}
+
+.activity-chart {
+    grid-area: topRight;
+    background-color: rgb(189, 208, 251, .4);
+}
+
+.history-chart {
+    grid-column: bottomLeft / span 2;
+    background-color: rgb(189, 208, 251, .4);
+}
+
+#goBtn {
+    background-color: #BDD0FB;
 }

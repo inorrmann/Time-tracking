@@ -1,17 +1,11 @@
 // dynamically generate times for options in form
 document.querySelector("#today").value = moment().format("dddd, MMM Do, YYYY");
 document.querySelector("#today").textContent = `${moment().format("dddd, MMM Do, YYYY")} (today)`;
-document.querySelector("#today-1").value = moment().subtract(1, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-1").textContent = moment().subtract(1, 'days').format("dddd, MMM Do, YYYY");
-document.querySelector("#today-2").value = moment().subtract(2, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-2").textContent = moment().subtract(2, 'days').format("dddd, MMM Do, YYYY");
-document.querySelector("#today-3").value = moment().subtract(3, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-3").textContent = moment().subtract(3, 'days').format("dddd, MMM Do, YYYY");
-document.querySelector("#today-4").value = moment().subtract(4, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-4").textContent = moment().subtract(4, 'days').format("dddd, MMM Do, YYYY");
-document.querySelector("#today-5").value = moment().subtract(5, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-5").textContent = moment().subtract(5, 'days').format("dddd, MMM Do, YYYY");
-document.querySelector("#today-6").value = moment().subtract(6, 'days').format("dddd, MMM Do, YYYY");
 document.querySelector("#today-6").textContent = moment().subtract(6, 'days').format("dddd, MMM Do, YYYY");
 
 const saveBtn = document.querySelector("#saveBtn")

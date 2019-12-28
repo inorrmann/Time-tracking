@@ -1,13 +1,37 @@
 <div class="grid">
     {{!-- <!-- title for the page --> --}}
-    <h1 class="title">Charts</h1>
+    <h1 class="title">Activities At-A-Glance</h1>
 
     {{!-- <!-- charts --> --}}
     <div class="charts">
-
+        <div class="week-chart m-2 ml-3 p-2 rounded overflow-auto">
+            <canvas id="week-charts"></canvas>
+        </div>
+        <div class="activity-chart m-2 mr-3 p-2 rounded">
+            <form class="text-center">
+                <h5>Select a date to see the activities saved</h5>
+                <div class="form-group row mx-2 justify-content-center">
+                    {{!-- <label for="date-chart" class="text-center">Select a date to see the activities entered</label> --}}
+                    <select id="date-chart" class="form-control col-md-10 mr-1">
+                        <option id="today-6"></option>
+                        <option id="today-5"></option>
+                        <option id="today-4"></option>
+                        <option id="today-3"></option>
+                        <option id="today-2"></option>
+                        <option id="today-1"></option>
+                        <option selected value="" id="today"></option>
+                    </select>
+                    <button type="submit" class="btn" id="goBtn">GO</button>
+                </div>
+            </form>
+            <canvas id="activity-charts"></canvas>
+        </div>
+        <div class="history-chart m-2 mx-3 mb-3 p-2 rounded">
+            <canvas id="history-charts"></canvas>
+        </div>
 
     </div>
-
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 <script src="/js/charts.js"></script>

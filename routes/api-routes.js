@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 
+// save activities from the dashboard
 router.post("/activities", ({ body }, res) => {
     db.Activity.create(body)
         .then(({ _id }) => db.User.findOneAndUpdate({}, { $push: { activities: _id } }, { new: true }))
@@ -13,6 +14,18 @@ router.post("/activities", ({ body }, res) => {
         });
 });
 
+
+// get all activities for the charts
+router.get("/activities", (req, res) => {
+    db.Activity.find({})
+            .then(dbActivity => {
+                res.json(dbActivity);
+            })
+            .catch(err => {
+                res.json(err);
+            });
+
+})
 
 
 // ROUTES NO LONGER BEING USED

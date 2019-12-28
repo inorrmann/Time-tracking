@@ -15,20 +15,13 @@ router.get("/dashboard", function (req, res) {
 router.get("/dashboard/:date", function (req, res) {
     db.Activity.find({ "date": req.params.date })
         .then(function (dbActivity) {
-            res.render("dashboard-populated", {activities: dbActivity, fullDate: dbActivity[0]})
+            res.render("dashboard-populated", { activities: dbActivity, fullDate: dbActivity[0] })
         })
 })
 
 // charts page from dashboard
-router.get("/charts", function(req, res) {
-    db.Activity.find({})
-        .then(dbActivity => {
-            console.log(dbActivity)
-            res.render("charts");
-        })
-        .catch(err => {
-            res.json(err);
-        });
+router.get("/charts", function (req, res) {
+    res.render("charts");
 });
 
 
